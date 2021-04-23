@@ -1,0 +1,17 @@
+.btn-accent {
+  text-align: center;
+  cursor: pointer;
+  min-width: 100px;
+  font-size: 1rem;
+  background-color: $accent-color;
+  color: $primary-color;
+  border: none;
+  padding: 0.8rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba($primary-color-rgb, 0.8);
+    border: none;
+    color: $text-color;
+  }
+}

@@ -1,0 +1,203 @@
+@import "./variables";
+@import "./gradient";
+@import "./mixins";
+// Cards
+@import "./card";
+// List groups:
+@import "./listGroup";
+// Buttons
+@import "./button";
+// Modal
+@import "./modal";
+// Loader
+@import "./loader";
+// .menu-button
+@import "./menu_button";
+
+// Config:
+
+body {
+  margin: 0;
+  background-image: $background-gradient;
+  background-attachment: fixed;
+  font-family: $font-primary;
+  color: $text-color;
+  word-spacing: 5px;
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// NavBar
+
+nav {
+  .menu-button {
+    display: none;
+  }
+  @include display-flex($justify-content: space-between);
+  background-color: rgba($secondary-color-rgb, 0.5);
+  height: auto;
+  .brand {
+    font-family: $font-logo;
+    font-size: 1.6rem;
+    margin-left: 0.5rem;
+  }
+
+  .toggle {
+    margin-left: 90px;
+    margin-right: 50px;
+  }
+
+  ul {
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    @include display-flex($justify-content: flex-end);
+
+    li {
+      font-family: $font-primary;
+      word-spacing: 5px;
+      a {
+        padding: 2rem 1.5rem;
+        margin-right: 0rem;
+        color: $text-color;
+        text-transform: uppercase;
+
+        &.active {
+          background-color: rgba($secondary-color-rgb, 0.7);
+        }
+      }
+
+      a:hover {
+        color: $text-color;
+        background-color: rgba($secondary-color-rgb, 0.4);
+      }
+    }
+  }
+}
+
+// Theme Toggle button
+
+@import "./toggleButton";
+
+// Hero section
+
+@import "./hero";
+
+// About Section
+section.about {
+  @include card();
+  .card-section {
+    .card {
+      p::first-letter {
+        font-size: 2rem;
+        color: rgba($color: $accent-color-rgb, $alpha: 1);
+      }
+      line-height: 2.5rem;
+      align-items: flex-start;
+    }
+  }
+}
+
+// Projects Section
+
+section.project {
+  @include card();
+  .card-section {
+    .card {
+      margin: 1rem;
+      min-width: 200px;
+      max-width: 400px;
+      p {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 0.8rem;
+      }
+      .thumbnail {
+        width: 100%;
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+// Contact form
+
+.contact {
+  @include card();
+  .contact-form {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.5rem;
+    column-gap: 2rem;
+    textarea {
+      display: block;
+    }
+    .form-row {
+      padding: 1rem;
+      position: relative;
+      .error {
+        font-size: 0.9rem;
+        color: rgba($color: $accent-color-rgb, $alpha: 1);
+      }
+      label {
+        position: absolute;
+        top: 35%;
+        font-size: 0.9rem;
+        transition: all 0.1s ease;
+      }
+      input,
+      textarea {
+        width: 100%;
+        height: 40px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid $primary-color;
+        resize: none;
+        &:focus {
+          outline: unset;
+          border: none;
+          border-bottom: 2px solid $primary-color;
+        }
+      }
+      &.full-width {
+        grid-column: 1/3;
+      }
+      &.button {
+        padding: 0;
+      }
+      &.focused {
+        label {
+          transform: translateY(-20px);
+          font-size: 0.6rem;
+        }
+        input,
+        textarea {
+          border-bottom: 2px solid $text-color;
+          color: $text-color;
+        }
+        textarea {
+          height: 80%;
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+}
+
+.thank-you {
+  @include card();
+}
+
+@import "./media_queries";

@@ -1,0 +1,17 @@
+@import "./mixins";
+.hero {
+  @include display-flex();
+
+  height: 90vh;
+  width: 100%;
+
+  #{&}-content {
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  span {
+    color: $accent-color;
+    font-weight: 600;
+  }
+}

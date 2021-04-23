@@ -1,0 +1,75 @@
+@media screen and (max-width: 768px) {
+  nav {
+    ul {
+      display: none;
+    }
+    .menu-button {
+      display: block;
+    }
+
+    &.open {
+      .toggle {
+        display: flex;
+        margin: auto;
+        align-self: flex-start;
+      }
+      min-height: 100vh;
+      max-height: 100%;
+      display: flex;
+      background-color: $primary-color;
+      .brand,
+      .menu-button {
+        align-self: flex-start;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        li {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+  .hero {
+    font-size: 0.8rem;
+  }
+
+  .btn-accent {
+    min-width: 80px;
+    font-size: 0.75rem;
+  }
+
+  section.about {
+    .card-section {
+      .card {
+        margin: 0 0.5rem;
+        min-height: auto;
+        min-width: auto;
+        // max-width: 600px;
+        p::first-letter {
+          font-size: 1rem;
+          color: rgba($color: $accent-color-rgb, $alpha: 1);
+        }
+        line-height: 1.5em;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  section.project .card-section .card {
+    text-align: center;
+  }
+
+  .contact {
+    .card-section .card {
+      min-width: auto;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

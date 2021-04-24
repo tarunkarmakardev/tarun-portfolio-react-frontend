@@ -25,7 +25,7 @@ export default class Hero extends Component {
         <>
           <h1 id="hero-content-title">{h1}</h1>
           <h2 id="hero-content-subtitle">
-            Meet <span>{h2}</span>
+            <span>{h2}</span>
           </h2>
         </>
       );
